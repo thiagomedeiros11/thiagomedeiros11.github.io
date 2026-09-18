@@ -1,0 +1,25 @@
+title: "new horizons"
+tagline: "A home for things I started learning at 13 and somehow never stopped."
+description: "A home for things I started learning at 13 and somehow never stopped."
+
+# Dados do autor e redes sociais
+author: "Thiago Medeiros"
+email: "thiago.wav1@gmail.com"
+github_username: "thiagomedeiros11"
+linkedin_url: "https://www.linkedin.com/in/thiagomedeiros11/"
+
+# Se o repositório no GitHub for 'newhorizons' e a URL for 'usuario.github.io/newhorizons',
+# descomente a linha abaixo para que os links funcionem corretamente no GitHub Pages:
+# baseurl: "/newhorizons"
+baseurl: ""
+url: ""
+
+# Markdown parser padrão
+markdown: kramdown
+
+# Arquivos e pastas para não incluir no build do site final (_site/)
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - vendor
