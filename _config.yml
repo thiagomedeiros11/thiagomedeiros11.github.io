@@ -8,10 +8,8 @@ email: "thiago.wav1@gmail.com"
 github_username: "thiagomedeiros11"
 linkedin_url: "https://www.linkedin.com/in/thiagomedeiros11/"
 
-# O repositório chama "newhorizons.github.io", então o GitHub Pages
-# serve em: thiagomedeiros11.github.io/newhorizons.github.io/
-# O baseurl precisa bater com esse caminho.
-baseurl: "/newhorizons.github.io"
+# User site (thiagomedeiros11.github.io) serve na raiz, sem prefixo.
+baseurl: ""
 url: "https://thiagomedeiros11.github.io"
 
 # Markdown parser padrão
