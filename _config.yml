@@ -8,11 +8,11 @@ email: "thiago.wav1@gmail.com"
 github_username: "thiagomedeiros11"
 linkedin_url: "https://www.linkedin.com/in/thiagomedeiros11/"
 
-# Se o repositório no GitHub for 'newhorizons' e a URL for 'usuario.github.io/newhorizons',
-# descomente a linha abaixo para que os links funcionem corretamente no GitHub Pages:
-# baseurl: "/newhorizons"
-baseurl: "/newhorizons"
-url: ""
+# O repositório chama "newhorizons.github.io", então o GitHub Pages
+# serve em: thiagomedeiros11.github.io/newhorizons.github.io/
+# O baseurl precisa bater com esse caminho.
+baseurl: "/newhorizons.github.io"
+url: "https://thiagomedeiros11.github.io"
 
 # Markdown parser padrão
 markdown: kramdown
