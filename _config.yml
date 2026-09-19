@@ -11,7 +11,7 @@ linkedin_url: "https://www.linkedin.com/in/thiagomedeiros11/"
 # Se o repositório no GitHub for 'newhorizons' e a URL for 'usuario.github.io/newhorizons',
 # descomente a linha abaixo para que os links funcionem corretamente no GitHub Pages:
 # baseurl: "/newhorizons"
-baseurl: ""
+baseurl: "/newhorizons"
 url: ""
 
 # Markdown parser padrão
