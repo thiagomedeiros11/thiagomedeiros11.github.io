@@ -3,19 +3,25 @@ layout: default
 ---
 
 <div class="home">
-  <h2 class="post-list-heading">Posts</h2>
-  <ul class="post-list">
-    {% for post in site.posts %}
-      <li>
-        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
-        <h3>
-          <a class="post-link" href="{{ post.url | relative_url }}">
-            {{ post.title }}
-          </a>
-        </h3>
-      </li>
-    {% else %}
-      <li>Nenhum post publicado ainda.</li>
+  {% assign posts_by_date = site.posts | group_by_exp: "post", "post.date | date: '%Y - %B'" %}
+  
+  {% if site.posts.size > 0 %}
+    {% for group in posts_by_date %}
+      <div class="post-group">
+        <h3 class="post-group-heading">{{ group.name }}</h3>
+        <ul class="post-list">
+          {% for post in group.items %}
+            <li class="post-item">
+              <span class="post-date">{{ post.date | date: "%b %d" }}</span>
+              <a class="post-link" href="{{ post.url | relative_url }}">
+                {{ post.title }}
+              </a>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
     {% endfor %}
-  </ul>
+  {% else %}
+    <p>Nenhum post publicado ainda.</p>
+  {% endif %}
 </div>

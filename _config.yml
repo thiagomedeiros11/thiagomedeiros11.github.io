@@ -17,6 +17,10 @@ url: ""
 # Markdown parser padrão
 markdown: kramdown
 
+# Mantém estes arquivos no _site/ durante regeneração (evita flash sem CSS)
+keep_files:
+  - assets
+
 # Arquivos e pastas para não incluir no build do site final (_site/)
 exclude:
   - Gemfile
