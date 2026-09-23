@@ -4,7 +4,7 @@ title: Contains Duplicate
 date: 2026-09-22 18:19:21 -0300
 ---
 ### Contains Duplicate
-<br>
+
 Here we go again, grinding some LeetCode problems :))
 
 Today we are going to solve the Contains Duplicate problem:
@@ -17,32 +17,50 @@ Input: nums = [1,2,3,1]
 Output: true
 ```
 
-So, obviously like the previous problems, it is not the best approach to iterate through the entire array.
+At first, I thought that the obvious approach would be to compare each number with the others.
 
-And unlike the other problems we solved, this time I do not need to worry about the index, just the value itself.
+Something like:
 
-After a quick search, I found out that we can use a set.
+```ts
+for (let i = 0; i < nums.length; i++){
+    for (let j = 0; < nums.length; j++){
+        //compare nums[i] with nums[j]
+    }
+}
+```
+The problem with this approach is that we may end up comparing many elements with each other, resulting in O(n²) time complexity.
+
+So instead of comparing the numbers against each other, We can use a Set to keep track of the numbers I have already seen.
 
 `const set = new Set<number>();`
 
-We can gradually save the numbers in the set, but if `set.has` returns that the number already exists in the set, we know we have a duplicate.
+As I iterate throught the array, I check wherer the current number already exists in the set.
+
+If it does, I know that i found a duplicate and can immediately return `true`.
+
+If it does not, I add the number to the set and continue.
 
 Like this:
 
 ```ts
-for(let i = 0; i < nums.length; i++){
-	if(set.has(nums[i])){
-		return true
-	}
-	set.add(nums[i]);
-	}
+for (let i = 0; i < nums.length; i++) {
+    if (set.has(nums[i])){
+        return true;
+    }
+    set.add(nums[i]);
+}
 ```
 
-Here we are saying to the set: is `nums[i]` in the set? No? Then store it in the set.
+So, I am still iterating throught the array, but only once.
+
+The important difference is that I am no longer comparing each number with every other number.
+
+The Set gives me an way to check whether I have already seen a value.
 
 ___
 <br>
-Tracing through an example:
+
+### Tracing through an example:
 
 ```js
 nums = [1,2,3,1]
@@ -75,14 +93,37 @@ set = {1,2,3}
 set.has(1) // true
 ```
 
-So we return `true` because we have a duplicate.
+So we return `true` because we found a duplicate.
 
-If none of the numbers exist in the set after checking all of them, we return `false`.
+Notice that in this particular example, we **did iterate through the entire array**.
+
+However, we don't necessarily have to.
+
+For example:
+
+```js
+nums = [1,2,1,3,4,5]
+```
+
+The algorithm would stop at the second `1`:
+
+```text
+1 → add
+2 → add
+1 → already exists → return true
+```
+
+We never need to check `3`, `4`, or `5`.
+
+This means the algorithm can stop early when a duplicate is found, but in the worst case it still needs to iterate through the entire array.
+
+The important improvement is that we reduced the time complexity from **O(n²)** to **O(n)**.
 
 ___
 <br>
+
 ### Solution
-<br>
+
 ```ts
 function containsDuplicate(nums: number[]): boolean {
     const set = new Set<number>();
