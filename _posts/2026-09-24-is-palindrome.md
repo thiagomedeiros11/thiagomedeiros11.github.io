@@ -136,12 +136,19 @@ That's exactly what we need. Let's break it down to understand better.
 
 Regex Breakdown:
 `/ /` -> delimits the regular expression
+
 `[]` -> defines a set of characters
+
 `^` -> means NOT when used as the first character inside []
+
 `a-z` -> between a and z
+
 `0-9` -> between 0 and 9
+
 `g` -> global, searches every occurrence, not just the first
+
 `i` -> ignores uppercase and lowercase
+
 `""` -> replaces the matches with an empty string, effectively removing them
 
 Now we have the complete solution for this challenge:
